@@ -6,7 +6,7 @@ DEVICE_PATH="device/motorola/hawao"
 COMMON_TREE_URL="https://github.com/HemanthJabalpuri/twrp_motorola_sm6225-common"
 COMMON_PATH="device/motorola/sm6225-common"
 BUILD_TARGET="boot"
-TW_DEVICE_VERSION="0"
+TW_DEVICE_VERSION="2"
 
 DEVICE_NAME="$(echo $DEVICE_PATH | cut -d "/" -f 3)"
 case $MANIFEST_BRANCH in
