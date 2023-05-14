@@ -98,7 +98,7 @@ upload() {
   uploadfile() {
     # Upload to WeTransfer
     # NOTE: the current Docker Image, "registry.gitlab.com/sushrut1101/docker:latest", includes the 'transfer' binary by Default
-    transfer wet $1 > link.txt || abort "ERROR: Failed to Upload $1!"
+    curl --upload-file $1 https://free.keep.sh > link.txt || abort "ERROR: Failed to Upload $1!"
 
     # Mirror to oshi.at
     TIMEOUT=20160
