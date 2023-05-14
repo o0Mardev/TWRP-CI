@@ -1,12 +1,12 @@
 MANIFEST_URL="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 MANIFEST_BRANCH="twrp-12.1"
-DEVICE_TREE_URL="https://github.com/HemanthJabalpuri/twrp_motorola_hawao"
-DEVICE_TREE_BRANCH="test-12.1"
-DEVICE_PATH="device/motorola/hawao"
-COMMON_TREE_URL="https://github.com/HemanthJabalpuri/twrp_motorola_sm6225-common"
-COMMON_PATH="device/motorola/sm6225-common"
+DEVICE_TREE_URL="https://github.com/HemanthJabalpuri/twrp_motorola_rhode"
+DEVICE_TREE_BRANCH="test"
+DEVICE_PATH="device/motorola/rhode
+COMMON_TREE_URL=""
+COMMON_PATH=""
 BUILD_TARGET="boot"
-TW_DEVICE_VERSION="2"
+TW_DEVICE_VERSION="400-beta"
 
 DEVICE_NAME="$(echo $DEVICE_PATH | cut -d "/" -f 3)"
 case $MANIFEST_BRANCH in
@@ -124,8 +124,5 @@ upload() {
 }
 
 case "$1" in
-  "sync") sync;;
-  "syncDevDeps") syncDevDeps;;
-  "build") build;;
-  "upload") upload;;
+  sync|syncDevDeps|build|upload) $1;;
 esac
