@@ -6,7 +6,7 @@ DEVICE_PATH="device/motorola/rhode"
 COMMON_TREE_URL=""
 COMMON_PATH=""
 BUILD_TARGET="boot"
-TW_DEVICE_VERSION="400-beta"
+TW_DEVICE_VERSION="test4"
 
 DEVICE_NAME="$(echo $DEVICE_PATH | cut -d "/" -f 3)"
 case $MANIFEST_BRANCH in
