@@ -1,7 +1,7 @@
 MANIFEST_URL="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 MANIFEST_BRANCH="twrp-12.1"
 DEVICE_TREE_URL="https://github.com/HemanthJabalpuri/twrp_motorola_rhode"
-DEVICE_TREE_BRANCH="test2"
+DEVICE_TREE_BRANCH="test"
 DEVICE_PATH="device/motorola/rhode"
 COMMON_TREE_URL=""
 COMMON_PATH=""
