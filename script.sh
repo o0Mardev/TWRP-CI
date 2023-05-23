@@ -1,12 +1,12 @@
 MANIFEST_URL="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 MANIFEST_BRANCH="twrp-12.1"
 DEVICE_TREE_URL="https://github.com/HemanthJabalpuri/twrp_motorola_rhode"
-DEVICE_TREE_BRANCH="test"
+DEVICE_TREE_BRANCH="touch"
 DEVICE_PATH="device/motorola/rhode"
 COMMON_TREE_URL=""
 COMMON_PATH=""
 BUILD_TARGET="boot"
-TW_DEVICE_VERSION="test4"
+TW_DEVICE_VERSION="touch"
 
 DEVICE_NAME="$(echo $DEVICE_PATH | cut -d "/" -f 3)"
 case $MANIFEST_BRANCH in
