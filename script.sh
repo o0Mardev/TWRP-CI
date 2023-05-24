@@ -6,7 +6,7 @@ DEVICE_PATH="device/motorola/rhode"
 COMMON_TREE_URL=""
 COMMON_PATH=""
 BUILD_TARGET="boot"
-TW_DEVICE_VERSION="touch"
+TW_DEVICE_VERSION="touch3"
 
 DEVICE_NAME="$(echo $DEVICE_PATH | cut -d "/" -f 3)"
 case $MANIFEST_BRANCH in
@@ -36,20 +36,11 @@ sync() {
   # Repo Sync
   repo sync -j$(nproc --all) --force-sync
 
-  # Cherry-pick gerrit patches
-  # if [ "$TWRP_BRANCH" = "twrp-12.1" ]; then
-  #	  if [[ "$TWRP_MANIFEST" == *"faoliveira78"* ]]; then
-  #	    git -C bootable/recovery fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/06/6106/1 && git -C bootable/recovery cherry-pick FETCH_HEAD
-  #	  else
-  #	    source build/envsetup.sh
-  #	    repopick 5917 6106 6120
-  #   fi
-  # fi
-
-  # Use our custom bootable recovery
-  #rm -rf bootable/recovery
-  #git clone --depth=1 https://github.com/HemanthJabalpuri/android_bootable_recovery -b test-12.1 bootable/recovery
-
+  # Apply patches
+  cd system/core
+  curl -sL https://github.com/HemanthJabalpuri/twrp_motorola_rhode/files/11550608/dontLoadVendorModules.txt | patch -p 1
+  cd -
+  
   # Clone device tree
   git clone $DEVICE_TREE_URL -b $DEVICE_TREE_BRANCH $DEVICE_PATH || abort "ERROR: Failed to Clone the Device Tree!"
 
