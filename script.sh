@@ -6,7 +6,7 @@ DEVICE_PATH="device/OPPO/OP4B9B"
 COMMON_TREE_URL=""
 COMMON_PATH=""
 BUILD_TARGET="recovery"
-TW_DEVICE_VERSION="test1"
+TW_DEVICE_VERSION="test3"
 
 DEVICE_NAME="$(echo $DEVICE_PATH | cut -d "/" -f 3)"
 case $MANIFEST_BRANCH in
@@ -96,7 +96,7 @@ upload() {
     curl -T $1 https://oshi.at/$1/${TIMEOUT} > mirror.txt || echo "WARNING: Failed to Mirror the Build!"
 
     # Show the Download Link
-    DL_LINK=$(cat link.txt | grep Download | cut -d " " -f 3)
+    DL_LINK=$(cat link.txt)
     MIRROR_LINK=$(cat mirror.txt | grep Download | cut -d " "  -f 1)
     echo "==$1=="
     echo "Download Link: ${DL_LINK}" || echo "ERROR: Failed to Upload the Build!"
