@@ -1,6 +1,6 @@
 MANIFEST_URL="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 MANIFEST_BRANCH="twrp-11"
-DEVICE_TREE_URL="https://github.com/HemanthJabalpuri/twrp_OPPO_OP4B9B"
+DEVICE_TREE_URL="https://github.com/o0Mardev/TWRP_CPH2021.git"
 DEVICE_TREE_BRANCH="test"
 DEVICE_PATH="device/OPPO/OP4B9B"
 BUILD_TARGET="recovery"
