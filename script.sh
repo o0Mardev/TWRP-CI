@@ -3,8 +3,6 @@ MANIFEST_BRANCH="twrp-11"
 DEVICE_TREE_URL="https://github.com/HemanthJabalpuri/twrp_OPPO_OP4B9B"
 DEVICE_TREE_BRANCH="test"
 DEVICE_PATH="device/OPPO/OP4B9B"
-COMMON_TREE_URL=""
-COMMON_PATH=""
 BUILD_TARGET="recovery"
 TW_DEVICE_VERSION="test3"
 
@@ -35,19 +33,9 @@ sync() {
 
   # Repo Sync
   repo sync -j$(nproc --all) --force-sync
-
-  # Apply patches
-  #cd system/core
-  #curl -sL https://github.com/HemanthJabalpuri/twrp_motorola_rhode/files/11550608/dontLoadVendorModules.txt | patch -p 1
-  #cd -
   
   # Clone device tree
   git clone $DEVICE_TREE_URL -b $DEVICE_TREE_BRANCH $DEVICE_PATH || abort "ERROR: Failed to Clone the Device Tree!"
-
-  # Clone common tree
-  if [ -n "$COMMON_TREE_URL" ] && [ -n "$COMMON_PATH" ]; then
-    git clone $COMMON_TREE_URL -b $DEVICE_TREE_BRANCH $COMMON_PATH || abort "ERROR: Failed to Clone the Common Tree!"
-  fi
 }
 
 syncDevDeps() {
