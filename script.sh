@@ -1,10 +1,10 @@
 MANIFEST_URL="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp"
 MANIFEST_BRANCH="twrp-11"
-DEVICE_TREE_URL="https://github.com/o0Mardev/TWRP_CPH2021.git"
-DEVICE_TREE_BRANCH="test"
+DEVICE_TREE_URL="https://github.com/o0Mardev/android_device_oppo_OP4B9B.git"
+DEVICE_TREE_BRANCH="main"
 DEVICE_PATH="device/OPPO/OP4B9B"
 BUILD_TARGET="recovery"
-TW_DEVICE_VERSION="test3"
+TW_DEVICE_VERSION="test"
 
 DEVICE_NAME="$(echo $DEVICE_PATH | cut -d "/" -f 3)"
 case $MANIFEST_BRANCH in
