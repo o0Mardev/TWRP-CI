@@ -4,6 +4,7 @@ env:
 
 task:
   name: "TWRP CI"
+  trigger_type: manual
   timeout_in: 120m
   container:
       image: ghcr.io/faoliveira78/docker:latest
